@@ -1,0 +1,143 @@
+<html>
+
+<head>
+    <title>xkeyboard-config layouts</title>
+    <style>
+        table {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        tbody tr :nth-child(3),
+        tbody tr :nth-child(4) {
+            color: grey;
+        }
+
+        tbody tr :nth-child(1) {
+            color: dimgrey;
+        }
+    </style>
+    <script type="module">
+        var layouts = (await(await fetch("layouts.json")).json()).layouts;
+        var iso3166 = await(await fetch("iso3166.json")).json();
+        var iso639 = await(await fetch("iso639.json")).json();
+
+        function xkb_name(layout) {
+            if (layout.variant) {
+                return `${layout.layout}(${layout.variant})`
+            } else {
+                return layout.layout;
+            }
+        }
+
+        layouts.sort((a, b) => xkb_name(a).localeCompare(xkb_name(b)));
+        layouts.sort((a, b) => a.description.localeCompare(b.description));
+
+        const tbody = document.getElementById("tbody");
+
+        var languageSet = new Set();
+        var countrySet = new Set();
+
+        layouts.forEach(layout => {
+            if (layout.layout == 'custom') {
+                return;
+            }
+
+            layout.iso639.map(x => languageSet.add(x));
+            layout.iso3166.map(x => countrySet.add(x));
+
+            const tr = document.createElement("tr");
+            tr.id = xkb_name(layout);
+            layout.iso639.map(x => tr.classList.add(x));
+            layout.iso3166.map(x => tr.classList.add(x));
+
+            var xkb = document.createElement("td");
+            xkb.appendChild(document.createTextNode(xkb_name(layout)));
+            tr.appendChild(xkb);
+
+            var description = document.createElement("td");
+            description.appendChild(document.createTextNode(layout.description));
+            tr.appendChild(description);
+
+            var langg = document.createElement("td");
+            langg.appendChild(document.createTextNode(layout.iso639.join(", ")));
+            tr.appendChild(langg);
+            var countt = document.createElement("td");
+            countt.appendChild(document.createTextNode(layout.iso3166.join(", ")));
+            tr.appendChild(countt);
+
+            tbody.appendChild(tr);
+        });
+
+        const language = document.getElementById("language");
+        var languageList = Array.from(languageSet);
+        languageList.sort();
+        languageList.forEach(x => {
+            var option = document.createElement("option");
+            option.value = x;
+            option.appendChild(document.createTextNode(iso639[x] || x));
+            language.appendChild(option);
+        }
+        );
+
+        const country = document.getElementById("country");
+        var countryList = Array.from(countrySet);
+        countryList.sort((a, b) => iso3166[a].localeCompare(iso3166[b]));
+        countryList.forEach(x => {
+            var option = document.createElement("option");
+            option.value = x;
+            option.appendChild(document.createTextNode(iso3166[x]));
+            country.appendChild(option);
+        });
+
+        document.getElementById("country").oninput = e => {
+            document.querySelectorAll("tbody tr").forEach(td => td.style.display = e.target.value ? 'none' : '');
+            document.querySelectorAll(`tbody tr.${e.target.value}`).forEach(td => td.style.display = '');
+        };
+
+        document.getElementById("language").oninput = document.getElementById("country").oninput;
+
+    </script>
+
+</head>
+
+<body>
+
+    <label for="language">Language</label>
+    <select id="language">
+        <option value=""></option>
+        <!-- <option value="eng">English</option> -->
+    </select>
+
+    <label for="country">Country</label>
+    <select id="country">
+        <option value=""></option>
+        <!-- <option value="AM">Armenia</option>
+        <option value="BG">Bulgaria</option> -->
+    </select>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Layout</th>
+                <th>Description</th>
+                <th>Languages</th>
+                <th>Countries</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <!-- <tr>
+            <td>us(chr)</td>
+            <td>Cherokee</td>
+            <td>chr</td>
+            <td>US</td>
+        </tr> -->
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>
