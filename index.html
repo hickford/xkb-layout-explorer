@@ -14,10 +14,6 @@
             color: grey;
         }
 
-        tbody tr :nth-child(1) {
-            color: dimgrey;
-        }
-
         tbody tr:nth-child(odd) {
             background-color: #f2f2f2;
         }
@@ -59,7 +55,10 @@
             layout.iso3166.map(x => tr.classList.add(x));
 
             var xkb = document.createElement("td");
-            xkb.appendChild(document.createTextNode(xkb_name(layout)));
+            var a = document.createElement("a");
+            a['href'] = "https://hickford.github.io/xkb_ldml/html/" + xkb_name(layout) + ".html";
+            a.appendChild(document.createTextNode(xkb_name(layout)));
+            xkb.appendChild(a);
             tr.appendChild(xkb);
 
             var description = document.createElement("td");
