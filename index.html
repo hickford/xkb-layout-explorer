@@ -17,6 +17,10 @@
         tbody tr :nth-child(1) {
             color: dimgrey;
         }
+
+        tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
     </style>
     <script type="module">
         var layouts = (await(await fetch("layouts.json")).json()).layouts;
@@ -91,32 +95,41 @@
             country.appendChild(option);
         });
 
-        document.getElementById("country").oninput = e => {
-            document.querySelectorAll("tbody tr").forEach(td => td.style.display = e.target.value ? 'none' : '');
-            document.querySelectorAll(`tbody tr.${e.target.value}`).forEach(td => td.style.display = '');
+        function filter(v) {
+            document.querySelectorAll("tbody tr").forEach(td => td.style.display = v ? 'none' : '');
+            document.querySelectorAll(`tbody tr.${v}`).forEach(td => td.style.display = '');
         };
 
-        document.getElementById("language").oninput = document.getElementById("country").oninput;
+        document.getElementById("country").oninput = e => filter(e.target.value);
+        document.getElementById("language").oninput = e => filter(e.target.value);
+        document.getElementById("reset").onclick = e => filter("");
 
     </script>
 
 </head>
 
 <body>
+    <h1>XKB layout explorer</h1>
 
-    <label for="language">Language</label>
-    <select id="language">
-        <option value=""></option>
-        <!-- <option value="eng">English</option> -->
-    </select>
+    <p>Table to explore layouts in xkeyboard-config. <a href="https://github.com/hickford/xkb-layout-explorer">Feedback
+            welcome on GitHub</a>.</p>
 
-    <label for="country">Country</label>
-    <select id="country">
-        <option value=""></option>
-        <!-- <option value="AM">Armenia</option>
+    <form>
+        <label for="language">Language:</label>
+        <select id="language">
+            <option value=""></option>
+            <!-- <option value="eng">English</option> -->
+        </select>
+
+        <label for="country">Country:</label>
+        <select id="country">
+            <option value=""></option>
+            <!-- <option value="AM">Armenia</option>
         <option value="BG">Bulgaria</option> -->
-    </select>
+        </select>
 
+        <input id="reset" type="reset" value="Reset filters">
+    </form>
 
     <table>
         <thead>
