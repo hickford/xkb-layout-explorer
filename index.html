@@ -37,6 +37,8 @@
 
         layouts.sort((a, b) => xkb_name(a).localeCompare(xkb_name(b)));
         layouts.sort((a, b) => a.description.localeCompare(b.description));
+        function getLanguageName(x) { return iso639[x] || x };
+        function getCountryName(x) { return iso3166[x] || x };
 
         const tbody = document.getElementById("tbody");
 
@@ -76,22 +78,22 @@
 
         const language = document.getElementById("language");
         var languageList = Array.from(languageSet);
-        languageList.sort();
+        languageList.sort((a, b) => getLanguageName(a).localeCompare(getLanguageName(b)));
         languageList.forEach(x => {
             var option = document.createElement("option");
             option.value = x;
-            option.appendChild(document.createTextNode(iso639[x] || x));
+            option.appendChild(document.createTextNode(getLanguageName(x)));
             language.appendChild(option);
         }
         );
 
         const country = document.getElementById("country");
         var countryList = Array.from(countrySet);
-        countryList.sort((a, b) => iso3166[a].localeCompare(iso3166[b]));
+        countryList.sort((a, b) => getCountryName(a).localeCompare(getCountryName(b)));
         countryList.forEach(x => {
             var option = document.createElement("option");
             option.value = x;
-            option.appendChild(document.createTextNode(iso3166[x]));
+            option.appendChild(document.createTextNode(getCountryName(x)));
             country.appendChild(option);
         });
 
@@ -101,11 +103,11 @@
         };
 
         document.getElementById("country").oninput = e => {
-            document.getElementById("language").value = ""; 
+            document.getElementById("language").value = "";
             filter(e.target.value);
         }
         document.getElementById("language").oninput = e => {
-            document.getElementById("country").value = ""; 
+            document.getElementById("country").value = "";
             filter(e.target.value);
         }
         document.getElementById("reset").onclick = e => filter("");
