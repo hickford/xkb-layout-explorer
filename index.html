@@ -100,8 +100,14 @@
             document.querySelectorAll(`tbody tr.${v}`).forEach(td => td.style.display = '');
         };
 
-        document.getElementById("country").oninput = e => filter(e.target.value);
-        document.getElementById("language").oninput = e => filter(e.target.value);
+        document.getElementById("country").oninput = e => {
+            document.getElementById("language").value = ""; 
+            filter(e.target.value);
+        }
+        document.getElementById("language").oninput = e => {
+            document.getElementById("country").value = ""; 
+            filter(e.target.value);
+        }
         document.getElementById("reset").onclick = e => filter("");
 
     </script>
