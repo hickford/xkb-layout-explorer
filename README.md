@@ -8,7 +8,7 @@ Interactive HTML table to explore layout data in xkeyboard-config ([source](http
 Updating data
 -----------
 
-Current data from release [xkeyboard-config-2.35.1](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/tags/xkeyboard-config-2.35.1)
+Current data from release [xkeyboard-config-2.36](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/tags/xkeyboard-config-2.36)
 
 Using xkbcli and [yq](https://github.com/mikefarah/yq/):
 

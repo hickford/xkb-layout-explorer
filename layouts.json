@@ -882,7 +882,7 @@
       "brief": "by",
       "description": "Russian (Belarus)",
       "iso639": [
-        "bel"
+        "rus"
       ],
       "iso3166": [
         "BY"
@@ -3105,9 +3105,9 @@
       "layout": "fr",
       "variant": "bre",
       "brief": "fr",
-      "description": "French (Breton)",
+      "description": "Breton (France)",
       "iso639": [
-        "fra"
+        "bre"
       ],
       "iso3166": [
         "FR"
@@ -5503,6 +5503,18 @@
       ]
     },
     {
+      "layout": "ru",
+      "variant": "ab",
+      "brief": "ru",
+      "description": "Abkhazian (Russia)",
+      "iso639": [
+        "abk"
+      ],
+      "iso3166": [
+        "RU"
+      ]
+    },
+    {
       "layout": "rs",
       "variant": "",
       "brief": "sr",
@@ -6216,6 +6228,18 @@
     },
     {
       "layout": "tr",
+      "variant": "e",
+      "brief": "tr",
+      "description": "Turkish (E)",
+      "iso639": [
+        "tur"
+      ],
+      "iso3166": [
+        "TR"
+      ]
+    },
+    {
+      "layout": "tr",
       "variant": "alt",
       "brief": "tr",
       "description": "Turkish (Alt-Q)",
@@ -6463,7 +6487,7 @@
       "brief": "uk",
       "description": "Russian (Ukraine, standard RSTU)",
       "iso639": [
-        "ukr"
+        "rus"
       ],
       "iso3166": [
         "UA"
@@ -6696,19 +6720,19 @@
         "vie"
       ],
       "iso3166": [
-        "VN"
+        "US"
       ]
     },
     {
       "layout": "vn",
       "variant": "fr",
       "brief": "vi",
-      "description": "Vietnamese (French)",
+      "description": "Vietnamese (France)",
       "iso639": [
         "vie"
       ],
       "iso3166": [
-        "VN"
+        "FR"
       ]
     },
     {
@@ -7419,12 +7443,52 @@
       "description": "Indonesian (Latin)",
       "iso639": [
         "ind",
-        "msa",
-        "min",
         "ace",
+        "ban",
+        "bbc",
+        "bew",
         "bjn",
-        "tsg",
-        "mfa"
+        "btm",
+        "bts",
+        "bug",
+        "gor",
+        "jav",
+        "jax",
+        "mad",
+        "mak",
+        "min",
+        "mui",
+        "sas",
+        "sun"
+      ],
+      "iso3166": [
+        "ID"
+      ]
+    },
+    {
+      "layout": "id",
+      "variant": "javanese",
+      "brief": "id",
+      "description": "Javanese",
+      "iso639": [
+        "ind",
+        "ace",
+        "ban",
+        "bbc",
+        "bew",
+        "bjn",
+        "btm",
+        "bts",
+        "bug",
+        "gor",
+        "jav",
+        "jax",
+        "mad",
+        "mak",
+        "min",
+        "mui",
+        "sas",
+        "sun"
       ],
       "iso3166": [
         "ID"
@@ -7437,12 +7501,23 @@
       "description": "Indonesian (Arab Pegon, phonetic)",
       "iso639": [
         "ind",
-        "msa",
-        "min",
         "ace",
+        "ban",
+        "bbc",
+        "bew",
         "bjn",
-        "tsg",
-        "mfa"
+        "btm",
+        "bts",
+        "bug",
+        "gor",
+        "jav",
+        "jax",
+        "mad",
+        "mak",
+        "min",
+        "mui",
+        "sas",
+        "sun"
       ],
       "iso3166": [
         "ID"
@@ -7455,24 +7530,23 @@
       "description": "Indonesian (Arab Pegon, extended phonetic)",
       "iso639": [
         "ind",
-        "msa",
-        "min",
         "ace",
+        "ban",
+        "bbc",
+        "bew",
         "bjn",
-        "tsg",
-        "mfa"
-      ],
-      "iso3166": [
-        "ID"
-      ]
-    },
-    {
-      "layout": "jv",
-      "variant": "",
-      "brief": "jv",
-      "description": "Indonesian (Javanese)",
-      "iso639": [
-        "jav"
+        "btm",
+        "bts",
+        "bug",
+        "gor",
+        "jav",
+        "jax",
+        "mad",
+        "mak",
+        "min",
+        "mui",
+        "sas",
+        "sun"
       ],
       "iso3166": [
         "ID"
