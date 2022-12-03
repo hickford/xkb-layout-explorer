@@ -705,7 +705,7 @@
         "hye"
       ],
       "iso3166": [
-        "AL"
+        "AM"
       ]
     },
     {
@@ -717,7 +717,7 @@
         "hye"
       ],
       "iso3166": [
-        "AL"
+        "AM"
       ]
     },
     {
@@ -729,7 +729,7 @@
         "hye"
       ],
       "iso3166": [
-        "AL"
+        "AM"
       ]
     },
     {
@@ -741,7 +741,7 @@
         "hye"
       ],
       "iso3166": [
-        "AL"
+        "AM"
       ]
     },
     {
@@ -753,7 +753,7 @@
         "hye"
       ],
       "iso3166": [
-        "AL"
+        "AM"
       ]
     },
     {
@@ -765,7 +765,7 @@
         "hye"
       ],
       "iso3166": [
-        "AL"
+        "AM"
       ]
     },
     {
@@ -893,6 +893,18 @@
       "variant": "intl",
       "brief": "by",
       "description": "Belarusian (intl.)",
+      "iso639": [
+        "bel"
+      ],
+      "iso3166": [
+        "BY"
+      ]
+    },
+    {
+      "layout": "by",
+      "variant": "phonetic",
+      "brief": "by",
+      "description": "Belarusian (phonetic)",
       "iso639": [
         "bel"
       ],
@@ -1313,7 +1325,7 @@
     },
     {
       "layout": "in",
-      "variant": "tam_tamilnet",
+      "variant": "tamilnet",
       "brief": "ta",
       "description": "Tamil (TamilNet '99)",
       "iso639": [
@@ -1325,7 +1337,7 @@
     },
     {
       "layout": "in",
-      "variant": "tam_tamilnet_with_tam_nums",
+      "variant": "tamilnet_tamilnumbers",
       "brief": "ta",
       "description": "Tamil (TamilNet '99 with Tamil numerals)",
       "iso639": [
@@ -1337,7 +1349,7 @@
     },
     {
       "layout": "in",
-      "variant": "tam_tamilnet_TAB",
+      "variant": "tamilnet_TAB",
       "brief": "ta",
       "description": "Tamil (TamilNet '99, TAB encoding)",
       "iso639": [
@@ -1349,7 +1361,7 @@
     },
     {
       "layout": "in",
-      "variant": "tam_tamilnet_TSCII",
+      "variant": "tamilnet_TSCII",
       "brief": "ta",
       "description": "Tamil (TamilNet '99, TSCII encoding)",
       "iso639": [
@@ -1363,7 +1375,19 @@
       "layout": "in",
       "variant": "tam",
       "brief": "ta",
-      "description": "Tamil (InScript)",
+      "description": "Tamil (InScript, with Arabic numerals)",
+      "iso639": [
+        "tam"
+      ],
+      "iso3166": [
+        "IN"
+      ]
+    },
+    {
+      "layout": "in",
+      "variant": "tam_tamilnumbers",
+      "brief": "ta",
+      "description": "Tamil (InScript, with Tamil numerals)",
       "iso639": [
         "tam"
       ],
@@ -2156,31 +2180,7 @@
       "layout": "ca",
       "variant": "multix",
       "brief": "fr",
-      "description": "Canadian (intl.)",
-      "iso639": [
-        "fra"
-      ],
-      "iso3166": [
-        "CA"
-      ]
-    },
-    {
-      "layout": "ca",
-      "variant": "multi",
-      "brief": "fr",
-      "description": "Canadian (intl., 1st part)",
-      "iso639": [
-        "fra"
-      ],
-      "iso3166": [
-        "CA"
-      ]
-    },
-    {
-      "layout": "ca",
-      "variant": "multi-2gr",
-      "brief": "fr",
-      "description": "Canadian (intl., 2nd part)",
+      "description": "Canadian (CSA)",
       "iso639": [
         "fra"
       ],
@@ -2723,6 +2723,18 @@
       "description": "Persian (with Persian keypad)",
       "iso639": [
         "fas"
+      ],
+      "iso3166": [
+        "IR"
+      ]
+    },
+    {
+      "layout": "ir",
+      "variant": "azb",
+      "brief": "azb",
+      "description": "Azerbaijani (Iran)",
+      "iso639": [
+        "azb"
       ],
       "iso3166": [
         "IR"
@@ -4448,38 +4460,6 @@
       ]
     },
     {
-      "layout": "latam",
-      "variant": "colemak-gaming",
-      "brief": "es",
-      "description": "Spanish (Latin American, Colemak for gaming)",
-      "iso639": [
-        "spa"
-      ],
-      "iso3166": [
-        "AR",
-        "BO",
-        "CL",
-        "CO",
-        "CR",
-        "CU",
-        "DO",
-        "EC",
-        "GT",
-        "HN",
-        "HT",
-        "MX",
-        "NI",
-        "PA",
-        "PE",
-        "PR",
-        "PY",
-        "SV",
-        "US",
-        "UY",
-        "VE"
-      ]
-    },
-    {
       "layout": "lt",
       "variant": "",
       "brief": "lt",
@@ -5266,6 +5246,30 @@
       "variant": "typewriter",
       "brief": "ru",
       "description": "Russian (typewriter)",
+      "iso639": [
+        "rus"
+      ],
+      "iso3166": [
+        "RU"
+      ]
+    },
+    {
+      "layout": "ru",
+      "variant": "ruchey_ru",
+      "brief": "ru",
+      "description": "Russian (engineering, RU)",
+      "iso639": [
+        "rus"
+      ],
+      "iso3166": [
+        "RU"
+      ]
+    },
+    {
+      "layout": "ru",
+      "variant": "ruchey_en",
+      "brief": "en",
+      "description": "Russian (engineering, EN)",
       "iso639": [
         "rus"
       ],
@@ -7496,9 +7500,9 @@
     },
     {
       "layout": "id",
-      "variant": "phonetic",
+      "variant": "melayu-phonetic",
       "brief": "id",
-      "description": "Indonesian (Arab Pegon, phonetic)",
+      "description": "Indonesian (Arab Melayu, phonetic)",
       "iso639": [
         "ind",
         "ace",
@@ -7525,9 +7529,38 @@
     },
     {
       "layout": "id",
-      "variant": "phoneticx",
+      "variant": "melayu-phoneticx",
       "brief": "id",
-      "description": "Indonesian (Arab Pegon, extended phonetic)",
+      "description": "Indonesian (Arab Melayu, extended phonetic)",
+      "iso639": [
+        "ind",
+        "ace",
+        "ban",
+        "bbc",
+        "bew",
+        "bjn",
+        "btm",
+        "bts",
+        "bug",
+        "gor",
+        "jav",
+        "jax",
+        "mad",
+        "mak",
+        "min",
+        "mui",
+        "sas",
+        "sun"
+      ],
+      "iso3166": [
+        "ID"
+      ]
+    },
+    {
+      "layout": "id",
+      "variant": "pegon-phonetic",
+      "brief": "id",
+      "description": "Indonesian (Arab Pegon, phonetic)",
       "iso639": [
         "ind",
         "ace",
